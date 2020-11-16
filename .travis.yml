@@ -1,0 +1,10 @@
+languge : generic
+sudo : required 
+services :
+    - docker
+
+before_install :
+    - docker build -t regevguy:docker-practice -f Dockerfile.dev .
+
+script :
+    - docker run -e CI=true regevguy/docker-practice npm run test
