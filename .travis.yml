@@ -8,3 +8,15 @@ before_install :
 
 script :
     - docker run -e CI=true regevguy:docker-practice npm run test
+
+deploy : 
+    provider : elasticbeanstalk
+    region : "us-east-2"
+    app : "docker-practice"
+    environment : "DockerPractice-env"
+    bucket_name : "elasticbeanstalk-us-east-2-205366435539"
+    bucket_path : "docker-practice"
+    on: 
+        branch : master
+        access_key_id: $AWS_ACCESS_KEY
+        secret_access_key: $AWS_SECRET_KEY
