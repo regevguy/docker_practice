@@ -12,8 +12,8 @@ script :
 deploy : 
     provider : elasticbeanstalk
     region : "us-east-2"
-    app : "docker-practice"
-    environment : "DockerPractice-env"
+    app : "docker-practice2"
+    environment : "DockerPractice2-env"
     bucket_name : "elasticbeanstalk-us-east-2-205366435539"
     bucket_path : "docker-practice"
     on: 
